@@ -1,1 +1,32 @@
-/*# sourceMappingURL=style.css.map */
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.users li {
+  font-size: 1.4rem;
+}
+.users p {
+  font-size: 1.2rem;
+  margin: 5px;
+}
+
+#form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#form .add-btn {
+  height: 30px;
+  margin: 3px;
+}
+#form .title {
+  height: 25px;
+  width: 350px;
+  margin: 5px;
+}/*# sourceMappingURL=style.css.map */
