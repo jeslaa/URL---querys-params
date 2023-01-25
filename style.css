@@ -29,4 +29,18 @@ h1 {
   height: 25px;
   width: 350px;
   margin: 5px;
+}
+
+.users {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.users .user {
+  background-color: rgb(179, 175, 175);
+  padding: 55px;
+  border-radius: 5px;
+  width: 50%;
+  margin: 10px;
 }/*# sourceMappingURL=style.css.map */
