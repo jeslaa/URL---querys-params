@@ -2,7 +2,9 @@ const BASE_URL = "https://jsonplaceholder.typicode.com/todos/"
 
 const usersAr = []
 const userList = document.querySelector('.users')
-const form = document.querySelector('#form')
+const form = document.querySelector('#inputForm')
+const title = document.querySelector('#title')
+const message = document.querySelector('.message')
 
 //hämtar all data
 const getData = async () => {
@@ -35,12 +37,8 @@ const createList = (data) => {
     status.classList.add('status')
     status.innerText = 'Completed: ' + data.completed
 
-    // const id = document.createElement('p')
-    // id.innerText = 'User: ' + data.userId
-
     list.appendChild(title)
     list.appendChild(status)
-    // list.appendChild(id)
 
 
     return list
@@ -68,9 +66,47 @@ const deleteUser = e =>{
     })
 }
 
+const checkSubmit = e => {
+    e.preventDefault()
+    //validerar inputen
+    if(title.value === ''){
+        message.innerHTML = 'Detta fält kan inte vara tomt'
+
+    }
+
+    else if (title.value != ''){
+        message.innerHTML = ''
+        const addUser = {
+            userId: 11,
+            completed:  false,
+            title: document.querySelector('#title').value
+            
+        }
+        //Skickar datan till databasen och den nya datan skrivs ut på domen med den gamla
+        fetch(BASE_URL, {
+            method: 'POST',
+            body: JSON.stringify(addUser),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            usersAr.push(data)
+            const newUser = createList(data)
+            userList.appendChild(newUser)
+            console.log(usersAr);
+        })
+    }
+
+    
+    
+}
+
 
 
 userList.addEventListener('click', deleteUser)
+form.addEventListener('submit', checkSubmit)
 
 
 

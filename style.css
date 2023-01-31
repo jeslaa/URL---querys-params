@@ -16,16 +16,17 @@ h1 {
   margin: 5px;
 }
 
-#form {
+#inputForm {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5px;
 }
-#form .add-btn {
+#inputForm .add-btn {
   height: 30px;
   margin: 3px;
 }
-#form .title {
+#inputForm .title {
   height: 25px;
   width: 350px;
   margin: 5px;
@@ -43,4 +44,10 @@ h1 {
   border-radius: 5px;
   width: 50%;
   margin: 10px;
+}
+
+.message {
+  margin: auto;
+  width: 200px;
+  color: firebrick;
 }/*# sourceMappingURL=style.css.map */

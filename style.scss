@@ -19,10 +19,11 @@ h1{
     }
 }
 
-#form{
+#inputForm{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5px;
 
     .add-btn{
         height: 30px;
@@ -51,6 +52,12 @@ h1{
         
     
     }
+}
+
+.message{
+    margin: auto;
+    width: 200px;
+    color: firebrick;
 }
 
 
