@@ -37,8 +37,14 @@ const createList = (data) => {
     status.classList.add('status')
     status.innerText = 'Completed: ' + data.completed
 
+    // const deleteBtn = document.createElement('button')
+    // deleteBtn.classList.add('delete-btn')
+    // deleteBtn.innerText = 'Delete'
+    
+
     list.appendChild(title)
     list.appendChild(status)
+    // list.appendChild(deleteBtn)
 
 
     return list
@@ -82,6 +88,7 @@ const checkSubmit = e => {
             title: document.querySelector('#title').value
             
         }
+        
         //Skickar datan till databasen och den nya datan skrivs ut på domen med den gamla
         fetch(BASE_URL, {
             method: 'POST',
